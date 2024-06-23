@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class ="container">
+        <div>이름 : <input type ="text" id ="name" value=""/></div>
+        <div>지역 :
+            <select id ="city" onchange="changeCity();">
+ 
+            </select>
+        </div>
+        <div>동내 :
+            <select id ="region_02" >
+                <option value ="">강남</option>
+                <option value ="">서초</option>
+
+            </select>
+            <select id ="region_064" style = 'display:none;'>
+                <option value ="">제주시</option>"
+                <option value ="">서귀포시</option>"
+
+            </select>
+        </div>
+        <div>
+            테스트 : <input type ="text" id ="test" value ="" />
+        </div>
+        <button type ="button" onclick ="regist();">등록</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function regist(){
+            // alert(document.getElementById("name").value);
+            // alert(document.getElementById("city").value);
+            alert($("#name").val())
+            alert($('#city').val())
+
+            let obj={
+                name:"",
+                city:""
+            };
+
+            obj.name=$("#name").val();
+            obj.name=$("#name").val();
+        }
+
+        function loadcity(){
+            let city=[{
+                code: "02",
+                name:"서울"
+            },
+            {
+                code : "064",
+                name:"제주"
+            }
+            
+
+           
+        ];
+        for( let i=0;i<city.length;i++){
+            if(i==0)        $('#city').append('<option value="'+city[i].code+'" selected>'+city[i].name+'</option>');
+            else         $('#city').append('<option value="'+city[i].code+'" selected>'+city[i].name+'</option>');
+
+
+        }
+        
+
+        }
+
+        loadcity();
+        function changeCity(){
+            // let city = document.getElementById("city").value;
+            // document.getElementById("region_02").style.display="none";
+            // document.getElementById("region_064").style.display="none";
+            // document.getElementById("region_"+city).style.display="";
+            let city= $("#city").val();
+            $("#region_02").hide();
+            $("#region_064").hide();
+            $("#region_"+city).show();
+        }
+        //var,let,const
+
+        var x= 1;
+        x=x+2;
+
+        document.getElementById("test").value=x;
+    </script>
+</body>
+</html>

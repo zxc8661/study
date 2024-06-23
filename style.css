@@ -1,0 +1,35 @@
+.color-primary{
+    color:red;
+}
+
+.font-50{
+    font-size : 50px;
+}
+
+
+
+.tb-thead>tr>td
+{
+    border:1px solid black;
+    font-size:14px;
+    font-weight:bold;
+    color: red;
+
+}
+
+.tb-body>tr>td{
+    border:1px solid black;
+
+}
+
+p{
+    background: yellowgreen; color: darkgreen;
+}
+
+.class1 {
+    background : purple; color : lavender;
+}
+
+#id{
+    background: blueviolet; color : blue;
+}
